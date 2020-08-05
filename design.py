@@ -2,16 +2,18 @@
 
 # Form implementation generated from reading ui file 'design.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created by: PyQt5 UI code generator 5.12.3
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(574, 163)
+        MainWindow.resize(319, 212)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         font = QtGui.QFont()
         font.setFamily("Ubuntu Mono")
@@ -20,23 +22,19 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         self.centralwidget.setFont(font)
         self.centralwidget.setObjectName("centralwidget")
-        self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.layoutWidget.setGeometry(QtCore.QRect(10, 10, 551, 131))
-        self.layoutWidget.setObjectName("layoutWidget")
-        self.gridLayout_3 = QtWidgets.QGridLayout(self.layoutWidget)
-        self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout_3.setObjectName("gridLayout_3")
-        self.graphicsView = QtWidgets.QGraphicsView(self.layoutWidget)
-        self.graphicsView.setObjectName("graphicsView")
-        self.gridLayout_3.addWidget(self.graphicsView, 0, 0, 1, 1)
-        self.gridLayout_2 = QtWidgets.QGridLayout()
-        self.gridLayout_2.setObjectName("gridLayout_2")
-        self.gridLayout = QtWidgets.QGridLayout()
+        self.widget = QtWidgets.QWidget(self.centralwidget)
+        self.widget.setGeometry(QtCore.QRect(10, 10, 301, 171))
+        self.widget.setObjectName("widget")
+        self.gridLayout = QtWidgets.QGridLayout(self.widget)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
-        self.lcdNumber = QtWidgets.QLCDNumber(self.layoutWidget)
+        self.lcdNumber = QtWidgets.QLCDNumber(self.widget)
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.lcdNumber.setFont(font)
         self.lcdNumber.setObjectName("lcdNumber")
         self.gridLayout.addWidget(self.lcdNumber, 0, 0, 1, 2)
-        self.spinBox = QtWidgets.QSpinBox(self.layoutWidget)
+        self.spinBox = QtWidgets.QSpinBox(self.widget)
         font = QtGui.QFont()
         font.setFamily("Ubuntu Mono")
         font.setPointSize(10)
@@ -46,10 +44,10 @@ class Ui_MainWindow(object):
         self.spinBox.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.spinBox.setObjectName("spinBox")
         self.gridLayout.addWidget(self.spinBox, 1, 0, 1, 1)
-        self.buttonOne = QtWidgets.QPushButton(self.layoutWidget)
+        self.buttonOne = QtWidgets.QPushButton(self.widget)
         self.buttonOne.setEnabled(True)
         font = QtGui.QFont()
-        font.setFamily("Ubuntu Mono")
+        font.setFamily("Ubuntu")
         font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
@@ -59,12 +57,13 @@ class Ui_MainWindow(object):
         self.buttonOne.setAutoDefault(False)
         self.buttonOne.setObjectName("buttonOne")
         self.gridLayout.addWidget(self.buttonOne, 1, 1, 1, 1)
-        self.gridLayout_2.addLayout(self.gridLayout, 0, 0, 1, 1)
-        self.progressBar = QtWidgets.QProgressBar(self.layoutWidget)
+        self.progressBar = QtWidgets.QProgressBar(self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Ubuntu")
+        self.progressBar.setFont(font)
         self.progressBar.setProperty("value", 0)
         self.progressBar.setObjectName("progressBar")
-        self.gridLayout_2.addWidget(self.progressBar, 1, 0, 1, 1)
-        self.gridLayout_3.addLayout(self.gridLayout_2, 0, 1, 1, 1)
+        self.gridLayout.addWidget(self.progressBar, 2, 0, 1, 2)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -78,3 +77,12 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Hey, dude"))
         self.buttonOne.setText(_translate("MainWindow", "Go, dude"))
 
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
